@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cd /var/www/databases/fromGit
+git pull
+
+cd /var/www/databases
+sqlite3 newTimers.db3 < fromGit/timers.db3.sqldump
+
+rm timers.db3 && mv fromGit/newTimers.db3 timers.db3
+
+
