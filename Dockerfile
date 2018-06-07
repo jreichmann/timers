@@ -11,6 +11,8 @@ ADD	webRoot/ /var/www
 
 RUN	cd /var/www/databases/fromGit && git clone https://github.com/jreichmann/kitinfo-timers-data.git .
 
+ADD	Caddyfile /etc/Caddyfile
+
 ADD	periodic/ /etc/periodic
 
-
+EXPOSE	80

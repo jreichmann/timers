@@ -1,0 +1,9 @@
+:80 {
+	root /var/www/
+	fastcgi / /tmp/php-fpm.sock php
+}
+
+:80/static/ {
+	root /var/www/static
+	browse
+}
